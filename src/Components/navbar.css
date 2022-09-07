@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.barra{
+    background-color: gray;
+}
+.contenedor{
+    width: 100;
+}
+.contenedor.container{
+    margin: 0px;
+    padding: 0px;
+}
+.logo{
+    margin-left: 0px;
+    width: 20%;
+}
+
+.nav-bar{
+     width: 80%;
+  justify-content: space-evenly;
+  
+}
+
+
+.btn-n1{
+    background-color: white;
+    padding: auto;
+    border-radius: 20px;
+    
+}
