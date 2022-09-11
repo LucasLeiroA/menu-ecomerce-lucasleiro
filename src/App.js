@@ -7,8 +7,9 @@ function App() {
   return (
     <div className="App">
      <NavBar/>
+    <h1 className='titulo'>Bienvenidos a Mundo Celular!!</h1>
     </div>
-  );
+  )
 }
 
 export default App;
