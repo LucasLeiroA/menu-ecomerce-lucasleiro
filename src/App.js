@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
      <NavBar/>
-    <ItemListContainer/>
+    <ItemListContainer msg="Bienvenidos a Mundo Celualar!!"/>
     </div>
   )
 }

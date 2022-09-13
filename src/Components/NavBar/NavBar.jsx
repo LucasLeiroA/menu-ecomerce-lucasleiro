@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './navbar.css'
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar(){
     return(
@@ -15,7 +15,8 @@ function NavBar(){
                     <Nav.Link href="#pricing">Accesorios</Nav.Link>
                     <Nav.Link href="#pricing">Fundas</Nav.Link>
                     <Nav.Link className="btn-n1" href="#pricing">Login</Nav.Link>
-                    <FontAwesomeIcon className="carrito" icon={faCartShopping} />
+                    <Nav.Link  className="carrito" href="#cart"><CartWidget/> </Nav.Link>
+                    
                   </Nav>
           </Container>
       </Navbar>

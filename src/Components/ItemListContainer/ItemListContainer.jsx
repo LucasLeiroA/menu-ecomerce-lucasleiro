@@ -1,8 +1,8 @@
 import React from 'react'
 import './ItemListContainer.css'
-function ItemListContainer() {
+function ItemListContainer(props) {
   return (
-    <h1 className='titulo' >Bienvenidos a Mundo Celular!!!</h1>
+    <h1 className='titulo' >{props.msg}</h1>
   )
 }
 
