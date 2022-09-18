@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import ItemCount from '../ItemCount/ItemCount';
 import './CardProduct.css';
 
-function CardProduct(props) {
+function Item(props) {
 
   let {tittle, price,img1,img2,img3,stock} = props;
 
@@ -42,4 +42,4 @@ function CardProduct(props) {
   )
 }
 
-export default CardProduct;
+export default Item;
