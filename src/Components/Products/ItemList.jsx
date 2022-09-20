@@ -11,7 +11,9 @@ function ItemList(props) {
           img1={item.img1}
           img2={item.img2}
           img3={item.img3}
-          stock={item.stock}/>)
+          stock={item.stock}
+          initial={item.initial}
+          />)
          
         })}
     </div>

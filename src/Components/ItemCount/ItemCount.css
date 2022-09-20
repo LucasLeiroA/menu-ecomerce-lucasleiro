@@ -22,3 +22,10 @@
     border:none;
     margin-bottom: 10px;
 }
+.btn-check:focus+.btn, .btn:focus {
+    color: var(--bs-btn-hover-color);
+    background-color: gray !important ;
+    border-color: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}

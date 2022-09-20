@@ -6,7 +6,7 @@
     background-color: gray;
 }
 .contenedor{
-    width: 100;
+    width: 100vh;
 }
 .contenedor.container{
     margin: 0px;
@@ -18,10 +18,14 @@
     text-align: center;
 }
 
+
 .nav-bar{
-     width: 50%;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
   
-  justify-content: flex-end;
+  
 }
 
 
@@ -31,8 +35,14 @@
     border-radius: 20px;
     
 }
+
 .carrito{
     padding: 10px;
     margin: 0px 0px 0px 20px; 
     width: 50px;
+}
+
+
+.container{
+    max-width: none !important;
 }

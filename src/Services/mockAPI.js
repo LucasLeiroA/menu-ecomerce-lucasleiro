@@ -7,7 +7,8 @@ const data = [
         img1:"/imgPhone/phone1.1.webp",
         img2:"/imgPhone/phone1.2.webp",
         img3:"/imgPhone/phone1.3.webp",
-        stock:4
+        stock:10,
+        initial:1
     },
     {
         id:"2",
@@ -16,7 +17,8 @@ const data = [
         img1:"/imgPhone/phone2.1.webp",
         img2:"/imgPhone/phone2.2.webp",
         img3:"/imgPhone/phone2.3.webp",
-        stock:3
+        stock:31,
+        initial:1
     },
     {
         id:"3",
@@ -25,7 +27,8 @@ const data = [
         img1:"/imgPhone/phone3.1.webp",
         img2:"/imgPhone/phone3.2.webp",
         img3:"/imgPhone/phone3.3.webp",
-        stock:4
+        stock:14,
+        initial:1
     }    
 ]  
 
