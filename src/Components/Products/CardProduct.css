@@ -1,4 +1,19 @@
 .carusel img{
-    height: 70vh;
-    
+    height: 30vh;
+    margin: auto;    
+}
+.precio{
+    font-size: 22px;
+    font-weight: 100;
+}
+.precio span{
+    font-weight: bold;
+}
+.titulo{
+    color: black; 
+    font-size: 22px;
+    font-weight: 100;
+}
+.cont{
+    height: 60vh;
 }

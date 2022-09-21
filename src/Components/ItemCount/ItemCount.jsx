@@ -2,17 +2,21 @@ import React ,{useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import './ItemCount.css'
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'                                                
 
 function ItemCount(props) {
 
-    let {img,tittle,stock,initial,onAdd} = props;
-
-    const [count, setCount] = useState(initial)
-
+    let {stock , img , initial ,tittle} = props;
+    
+    
+    const [count, setCount] = useState(1);
+    //tengo un problema a la hora de inicializar el estado cuando pongo el initial como valor de incio de estado no me funciona
+    //esto sucede cuando lo uso en itemDetail pero cuando lo uso en el item me funciona perfectamente si cuando lo vea me pueda 
+    //coregir esta duda porfavor
+        
     function handleAdd(){
         if (count < stock) {
-            setCount(count + 1)    
+            setCount(count + 1);    
         }else{
             Swal.fire({
                 icon: 'error',
@@ -25,7 +29,7 @@ function ItemCount(props) {
 
     function handleSubstract(){
         if (count>initial) {
-            setCount(count - 1)
+            setCount(count - 1);
             
         }else{
             Swal.fire({
@@ -35,7 +39,22 @@ function ItemCount(props) {
               })
         }
     }
+    
+    function onAdd(count, tittle, img ) {
+        Swal.fire({
+          imageUrl: `${img}`,
+          imageHeight: 100,
+          imageWidth: 65,
+          html: `<b>Cantidad: ${count}</b><br/>${tittle}`,
+          footer: "Producto agregado ✅",
+          showConfirmButton: false,
+          position: "top-right",
+          width: "20em",
+          timer: "1500",
+        });
+      }
 
+     
 
   return (
     

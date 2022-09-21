@@ -11,8 +11,7 @@ useEffect(() => {
    getItems().then(
     (respuesta)=>{
       setData(respuesta)
-      console.log(respuesta);
-    }
+       }
    )
 }, [])
 
