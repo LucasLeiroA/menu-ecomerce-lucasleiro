@@ -7,6 +7,7 @@ function ItemListContainer() {
 
 const [data, setData] = useState([]);
 
+
 useEffect(() => {
    getItems().then(
     (respuesta)=>{
@@ -18,7 +19,7 @@ useEffect(() => {
 
   return (
     <>
-      {/* <h1 className="titulo">{props.msg}</h1> */}
+     
 
          <ItemList data={data}/>
       

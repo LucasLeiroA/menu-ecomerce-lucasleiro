@@ -7,6 +7,8 @@ function ItemList(props) {
         {props.data.map((item) => {
           return( <Item
           key={item.id}
+          id={item.id}
+          cat={item.category}
           tittle={item.tittle}
           price={item.price}
           img1={item.img1}

@@ -5,8 +5,12 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 function ItemDetail(props) {
 
-    let { tittle, price, img1, img2, img3, stock, initial,description } = props.dato;
-    let num = initial;
+    let {img1,img2,img3,price,tittle,description,stock,initial} = props.data;
+    
+    console.log(props);
+    
+    
+
   return (
     <div className='cant'>
         <div className='section1'>
@@ -34,7 +38,7 @@ function ItemDetail(props) {
                     </Card.Text>
                     <ItemCount
                     stock={stock}
-                    initial={num}
+                    initial={initial}
                     tittle={tittle}
                     img={img1}
                     />
@@ -44,6 +48,7 @@ function ItemDetail(props) {
         </div>
   
   </div>
+
   )
 }
 
