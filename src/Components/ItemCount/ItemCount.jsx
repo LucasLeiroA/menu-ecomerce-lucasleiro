@@ -1,12 +1,12 @@
 import React ,{useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import './ItemCount.css'
-import Swal from 'sweetalert2'                                                
+import './ItemCount.css';
+import Swal from 'sweetalert2';                                                
 
 function ItemCount(props) {
 
-    let {stock , img , initial ,tittle} = props;
+    let {stock , img , initial ,tittle,onAdd} = props;
     
     
     const [count, setCount] = useState(1);
@@ -40,19 +40,7 @@ function ItemCount(props) {
         }
     }
     
-    function onAdd(count, tittle, img ) {
-        Swal.fire({
-          imageUrl: `${img}`,
-          imageHeight: 100,
-          imageWidth: 65,
-          html: `<b>Cantidad: ${count}</b><br/>${tittle}`,
-          footer: "Producto agregado ✅",
-          showConfirmButton: false,
-          position: "top-right",
-          width: "20em",
-          timer: "1500",
-        });
-      }
+   
 
      
 

@@ -12,11 +12,11 @@ function NavBar(){
           <Container className="contenedor">
           <Link className="logo" to="/"><Navbar.Brand  href="#home"><img src="/logocel2.png" alt="" /></Navbar.Brand></Link>  
                   <Nav className="nav-bar">
-                    <Link to="/celular"><Nav.Link href="#features">Celulares</Nav.Link></Link> 
-                    <Link to="/accesorio"><Nav.Link href="#pricing">Accesorios</Nav.Link></Link>
-                    <Link to="/fundas"><Nav.Link href="#pricing">Fundas</Nav.Link></Link>
+                    <Link to="/categoria/celular"><Nav.Link href="#features">Celulares</Nav.Link></Link> 
+                    <Link to="/categoria/accesorio"><Nav.Link href="#pricing">Accesorios</Nav.Link></Link>
+                    <Link to="/categoria/funda"><Nav.Link href="#pricing">Fundas</Nav.Link></Link>
                     <Link><Nav.Link className="btn-n1" href="#pricing">Quienes Somos!</Nav.Link></Link>
-                    <Nav.Link  className="carrito" href="#cart"><CartWidget/></Nav.Link>  
+                   <Link to="/cart"><Nav.Link  className="carrito" href="#cart"><CartWidget/></Nav.Link>  </Link> 
                   </Nav>
           </Container>
       </Navbar>

@@ -4,9 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemFundasContainer from "./Components/Fundas/ItemFundasContainer";
-import ItemCelularesContainer from "./Components/Celulares/ItemCelularesContainer";
-import ItemAccesoriosContainer from "./Components/Accesorios/ItemAccesoriosContainer";
+import CartContainer from "./Components/CartContainer/CartContainer";
 function App() {
   return (
     <div className="App">
@@ -18,9 +16,9 @@ function App() {
             element={<ItemListContainer />}
           />
           <Route path="/detalle/:id/:cat" element={<ItemDetailContainer />} />
-          <Route path="/celular" element={<ItemCelularesContainer/>}/>
-          <Route path="/fundas" element={<ItemFundasContainer/>}/>
-          <Route path="/accesorio" element={<ItemAccesoriosContainer/>}/>
+          <Route path="/categoria/:cat" element={<ItemListContainer/>}/>
+      
+          <Route path="/cart" element={<CartContainer/>}/>
          </Routes>
 
       </BrowserRouter>
