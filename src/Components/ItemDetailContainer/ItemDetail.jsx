@@ -4,16 +4,20 @@ import Carousel from "react-bootstrap/Carousel";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 import Swal from 'sweetalert2';
-import {useState} from "react";    
-import {Link} from "react-router-dom"; 
+import {useContext} from "react";    
+import {cartContext} from "../../Context/CartContext"   
+
 function ItemDetail(props) {
 
     let {img1,img2,img3,price,tittle,description,stock,initial} = props.data;
-    
-    //Estado en el que se guarda el valor de itemCount
-    const [cartState, setCartState] = useState(false)
+    let dato = props.data;
     
 
+    //Estado en el que se guarda el valor de itemCount
+    
+    
+    const {addItem} = useContext(cartContext);
+    
     function onAdd(count, tittle, img ) {
 
         Swal.fire({
@@ -28,7 +32,9 @@ function ItemDetail(props) {
             timer: "1500",
             
         });
-        setCartState(true)
+       
+        addItem(dato,count);
+
     }
     
     
@@ -58,15 +64,13 @@ function ItemDetail(props) {
                     <Card.Text className='des'>
                         {description}
                     </Card.Text>
-                    {cartState === false ? 
                     <ItemCount
                     stock={stock}
                     initial={initial}
                     tittle={tittle}
                     img={img1}
                     onAdd={onAdd}
-                    /> :<Link to="/cart"><button>Finalizar Compra</button></Link> 
-                    }
+                    /> 
                     </Card.Body>
                 
                  

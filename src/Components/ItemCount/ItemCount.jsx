@@ -2,11 +2,13 @@ import React ,{useState} from 'react'
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import './ItemCount.css';
-import Swal from 'sweetalert2';                                                
+import Swal from 'sweetalert2';   
+                                    
 
 function ItemCount(props) {
 
     let {stock , img , initial ,tittle,onAdd} = props;
+    
     
     
     const [count, setCount] = useState(1);
