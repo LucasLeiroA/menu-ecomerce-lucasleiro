@@ -37,11 +37,8 @@ function ItemDetail(props) {
         });
      
          
-         addItem(dato,count);
-       
-    
-       
-        setAgregado(false)
+         addItem(dato,count);       
+        setAgregado(false);
 
     }
     

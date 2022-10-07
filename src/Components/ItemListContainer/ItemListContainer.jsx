@@ -3,26 +3,31 @@ import "./ItemListContainer.css";
 import getItems, { getItemsByCategory } from "../../Services/mockAPI";
 import ItemList from "../Products/ItemList";
 import {useParams} from "react-router-dom";
+import { DotSpinner } from '@uiball/loaders'
+
 
 function ItemListContainer() {
 
 const [data, setData] = useState([]);
-
+const [isLoading,setIsLoading] = useState(true);
 let { cat } = useParams();
 
 useEffect(() => {
+  setIsLoading(true)
   if (cat === undefined) {
      getItems().then(
     (respuesta)=>{
       setData(respuesta)
        }
    )
+   .finally(()=>setIsLoading(false))
   }else{
     getItemsByCategory(cat).then(
       (respuesta)=>{
         setData(respuesta)
          }
      )
+     .finally(()=>setIsLoading(false))
   }
   
 }, [cat])
@@ -30,9 +35,18 @@ useEffect(() => {
 
   return (
     <>
-     
+     {
+      isLoading ? <div className="loader">
+           <DotSpinner
+       size={40}
+       speed={0.9} 
+       color="black" 
+      />
+      </div>
+      : <ItemList data={data}/>
+     }
 
-         <ItemList data={data}/>
+
       
     </>
   );
