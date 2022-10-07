@@ -4,11 +4,14 @@ import Carousel from "react-bootstrap/Carousel";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 import Swal from 'sweetalert2';
-import {useContext} from "react";    
+import {useContext,useState} from "react";    
 import {cartContext} from "../../Context/CartContext"   
+import {Link} from "react-router-dom";
+
 
 function ItemDetail(props) {
 
+    const [agregado, setAgregado] = useState(true)
     let {img1,img2,img3,price,tittle,description,stock,initial} = props.data;
     let dato = props.data;
     
@@ -16,7 +19,7 @@ function ItemDetail(props) {
     //Estado en el que se guarda el valor de itemCount
     
     
-    const {addItem} = useContext(cartContext);
+    const {addItem } = useContext(cartContext);
     
     function onAdd(count, tittle, img ) {
 
@@ -32,8 +35,13 @@ function ItemDetail(props) {
             timer: "1500",
             
         });
+     
+         
+         addItem(dato,count);
        
-        addItem(dato,count);
+    
+       
+        setAgregado(false)
 
     }
     
@@ -64,13 +72,13 @@ function ItemDetail(props) {
                     <Card.Text className='des'>
                         {description}
                     </Card.Text>
-                    <ItemCount
+                    {agregado?<ItemCount
                     stock={stock}
                     initial={initial}
                     tittle={tittle}
                     img={img1}
                     onAdd={onAdd}
-                    /> 
+                    /> :<button className='linkCarrito'><Link  to="/cart">Ir al carrito 🛒 </Link></button> }               
                     </Card.Body>
                 
                  

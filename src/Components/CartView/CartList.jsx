@@ -1,11 +1,18 @@
 import React,{useState} from 'react'
 import './CartList.css';
 import Swal from 'sweetalert2'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import {cartContext} from "../../Context/CartContext"
+import { useContext } from 'react';
 function CartList(props) {
 
-    let { img1,tittle , count ,price,stock } = props;
+   let { removeItem } = useContext(cartContext)
+
+    let { img1,tittle , count ,price,stock,id } = props;
 
     const [cantidad, setCantidad] = useState(count);
+
 
     function incrementarCount(){
         if (cantidad < stock) {
@@ -43,7 +50,7 @@ function CartList(props) {
                 <h2 className='cantidad'>{cantidad}</h2>    
                 <button className='btna' onClick={()=>incrementarCount()}>+</button> 
             </div>
-                  
+            <button key={id} onClick={()=>removeItem(id)} className='btnEliminar'><FontAwesomeIcon icon={faTrashCan} /> </button>      
             <h2>${cantidad*price}</h2>
          
         </div>

@@ -36,9 +36,21 @@ export default function CartContextProvider({ children }) {
   function clear() {
     setCart([]);
   }
+  
+  function removeItem(itemId){
+
+    let itemFind = cart.findIndex((item)=>item.id === itemId);
+        cart.splice(itemFind,1);
+        setCart(cart);
+               
+  }
+ 
+
+
+  
 
   return (
-    <cartContext.Provider value={{ cart, addItem, getTotalItemsInCart, clear }}>
+    <cartContext.Provider value={{ cart, addItem, getTotalItemsInCart, clear,removeItem }}>
       {children}
     </cartContext.Provider>
   );

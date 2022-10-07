@@ -20,3 +20,12 @@
     max-height: 40vh;
     overflow: scroll;
 }
+.linkCarrito{
+    margin: auto;
+    display: flex;
+    justify-items: center;
+    border: none;
+    margin-top: 3vh;
+    background-color: white;
+    font-size: 20px;
+}
