@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getSingleItem } from "../../Services/mockAPI";
+import { getSingleItem } from "../../Services/firestore";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import { DotSpinner } from "@uiball/loaders";
@@ -7,15 +7,15 @@ import "./ItemDetailContainer.css";
 function ItemDetailContainer() {
   const [data, setData] = useState({});
   const [isLoadoing, setIsLoading] = useState(true);
-  const { id, cat } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    getSingleItem(id, cat)
+    getSingleItem(id)
       .then((respuestaDatos) => {
         setData(respuestaDatos);
       })
       .finally(() => setIsLoading(false));
-  }, [id, cat]);
+  }, [id]);
 
   // este se usa para ver que los datos no se hayan modificado o cargados para poder hacer el render de error o cargando..
 

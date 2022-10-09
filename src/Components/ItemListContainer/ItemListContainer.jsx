@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import "./ItemListContainer.css";
-import getItems, { getItemsByCategory } from "../../Services/mockAPI";
+import {getItems,getItemsByCategoty} from "../../Services/firestore";
 import ItemList from "../Products/ItemList";
 import {useParams} from "react-router-dom";
 import { DotSpinner } from '@uiball/loaders'
@@ -15,17 +15,19 @@ let { cat } = useParams();
 useEffect(() => {
   setIsLoading(true)
   if (cat === undefined) {
-     getItems().then(
+     getItems()
+     .then(
     (respuesta)=>{
       setData(respuesta)
        }
    )
    .finally(()=>setIsLoading(false))
-  }else{
-    getItemsByCategory(cat).then(
-      (respuesta)=>{
-        setData(respuesta)
-         }
+  }
+  else{
+    getItemsByCategoty(cat).then(
+    (respuesta)=>{
+      setData(respuesta)
+    }
      )
      .finally(()=>setIsLoading(false))
   }
